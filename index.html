@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Food, Save People</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: orange;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .map-container {
+            width: 50%;
+            height: 400px;
+        }
+        .input-container {
+            width: 40%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input {
+            width: calc(100% - 22px); /* Adjust input width */
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: orange;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>sharing usage helps save costs and emissions.</h1>
+    </header>
+
+
+    <div class="container">
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m46!1m12!1m3!1d80419.39341531937!2d-1.5417134858904744!3d50.95874359227463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m31!3e0!4m5!1s0x487474307cdce411%3A0xd57e2b2defe14b3a!2sSO16%206YD%2C%20Southampton%2C%20UK!3m2!1d50.9334077!2d-1.434969!4m5!1s0x487475ff8dc79e37%3A0x5704da7b2e0b0d2f!2sSO40%203JD%2C%20Salisbury%20Rd%2C%20Totton%2C%20Southampton%2C%20UK!3m2!1d50.9210256!2d-1.4924122!4m5!1s0x48738aa6548957b1%3A0x2718cb79867cee3d!2sSO51%208XA%2C%20Romsey%2C%20UK!3m2!1d50.990012!2d-1.500024!4m5!1s0x48738aa64bc45a31%3A0x3dbb5350ac89f573!2sSO51%208JH%2C%20Romsey%2C%20UK!3m2!1d50.9907946!2d-1.5000867999999998!4m5!1s0x4874754dba98f273%3A0xc4dff6e2998755d9!2sSO51%207LB%2C%20Richmond%20Ln%2C%20Romsey%2C%20UK!3m2!1d50.9996503!2d-1.4831473!5e0!3m2!1sen!2sin!4v1704684369607!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe id="mapFrame" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d11931.760577836964!2d-74.0059746!3d40.712776!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1641681129460!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="input-container">
+            <h2>Choose Zipcode</h2>
+            <select id="stateSelect">
+
+                <option value="ny">southampton</option>
+                           </select>
+            <input type="text" id="zipcodeInput" placeholder="Enter Zipcode">
+            <div class="input-container">
+                <h2>loaction Zipcode</h2>
+                <select id="stateSelect">
+    
+                    <option value="ny">southampton</option>
+                               </select>
+                <input type="text" id="zipcodeInput" placeholder="Enter Zipcode">
+            <button onclick="submitZipcode()">Submit</button>
+
+    <div class="box" id="boxA">
+        Box A 15
+    </div>
+    <div class="box" id="boxB">
+        Box B 80 
+    </div>
+    <div class="box" id="boxC">
+        Box C 30 
+    </div>
+    </div><div>
+        <br>
+        <p>after</p>
+        <div class="box" id="boxA">
+            Box A 0
+        </div>
+        <div class="box" id="boxB">
+            Box B 110
+        </div>
+        <div class="box" id="boxC">
+            Box C 0
+        </div>
+        </div></div>
+    
+
+    <script>
+        function submitZipcode() {
+            var enteredZipcode = document.getElementById("zipcodeInput").value;
+
+            // Modify the source of the iframe with the entered zip code
+            var googleMapsUrl = "https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d11931.760577836964!2d-74.0059746!3d40.712776!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1641681129460!5m2!1sen!2sus"; // Default Google Maps URL
+
+            // Adjust the Google Maps URL to include the entered zip code
+            googleMapsUrl += "&q=" + enteredZipcode;
+
+            // Modify the source of the iframe with the new URL
+            document.getElementById("mapFrame").src = googleMapsUrl;
+        }
+    </script>
+</body>
+</html>
